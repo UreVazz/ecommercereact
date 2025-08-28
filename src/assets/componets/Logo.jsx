@@ -1,9 +1,8 @@
-import React from 'react'
 
 function Logo() {
   return (
     <div>
-      <h1>Logo</h1>
+      <img src="/alebrigo-logo.png" alt="Logo" className="logo" />
     </div>
   )
 }

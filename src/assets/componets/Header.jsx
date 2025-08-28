@@ -1,11 +1,13 @@
 import Logo from "./Logo";
 import Navbar from "./Navbar";
+import { ShoppingCart } from 'lucide-react';
 
 function Header() {
   return (
-    <div>
+    <div className="header">
     <Logo />
     <Navbar />
+    <ShoppingCart />
     </div>
   )
 }

@@ -1,10 +1,17 @@
-import React from 'react'
+
 
 function Navbar() {
   return (
-    <div>
-      <h1>Navbar</h1>
+    <div className='navbar'>
+      <nav className="menu">
+      <ul className="itemsmenu">
+        <li><a href="">Productos</a></li>
+        <li><a href="">Ofertas</a></li>
+        <li><a href="">Cupones</a></li>
+      </ul>
+    </nav>
     </div>
+    
   )
 }
 
