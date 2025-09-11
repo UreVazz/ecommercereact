@@ -5,7 +5,7 @@ function Body() {
   return (
     <div className="main">
         <img src={Img1} alt="Imagen bienvenida" className="bienvenidaimg"/>
-      <ItemListContainer mensaje= "Bienvenidos a mi Landing"/>
+      <ItemListContainer />
     </div>
   )
 }

@@ -1,0 +1,48 @@
+.listadoDeCards{
+    display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 24px; 
+  padding: 24px;
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+.cardItem{
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 8px;
+    width: 100%;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease;
+}
+.cardItem:hover{
+    transform: scale(1.03);
+}
+
+.containerCategoriesFilter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.mainContainerDeListadoProductos{
+    width: 100%;
+}
+
+
+
+@media (max-width: 1024px) {
+  .listadoDeCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (~480px ancho): 1 por fila */
+@media (max-width: 600px) {
+  .listadoDeCards {
+    grid-template-columns: 1fr;
+  }
+}

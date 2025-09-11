@@ -1,8 +1,26 @@
+import { useEffect, useState } from "react";
+import "./style.css";
+import productos from "./productos.json";
+import ItemList from "./ItemList";
 
-function ItemListContainer({mensaje}) {
+function ItemListContainer() {
+  const [items, setItems] = useState([])
+
+  useEffect(() => {
+    const fetchProductos = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(productos)
+      }, 2000)
+    })
+    
+    fetchProductos.then((data) => {
+      setItems(data)
+    })
+  }, [])
+
   return (
-    <div>
-      <h2>{mensaje}</h2>
+    <div className="mainContainerDeListadoProductos">
+      <ItemList items={items} />
     </div>
   )
 }
