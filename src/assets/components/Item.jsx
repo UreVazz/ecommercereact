@@ -1,8 +1,9 @@
 
-function Item({nombre, descripcion, precio}) {
+function Item({imagen, nombre, descripcion, precio}) {
   return (
     <div className='cardItem'>
-      <h2>{nombre}</h2>
+      <img className="imgproducto" src={imagen} alt={nombre} />
+      <h3>{nombre}</h3>
       <p>{descripcion}</p>
       <p>Precio: ${precio}</p>
     </div>

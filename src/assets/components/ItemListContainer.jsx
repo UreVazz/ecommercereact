@@ -10,7 +10,7 @@ function ItemListContainer() {
     const fetchProductos = new Promise((resolve) => {
       setTimeout(() => {
         resolve(productos)
-      }, 2000)
+      }, 1000)
     })
     
     fetchProductos.then((data) => {

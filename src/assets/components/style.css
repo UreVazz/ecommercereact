@@ -20,6 +20,14 @@
     transform: scale(1.03);
 }
 
+.imgproducto{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+
 .containerCategoriesFilter{
     display: flex;
     flex-direction: column;
@@ -28,9 +36,16 @@
     margin-top: 20px;
     width: 100%;
 }
+
+.containerCategoriesFilter button {
+    margin: 0px 4px;
+}
+
+
 .mainContainerDeListadoProductos{
     width: 100%;
 }
+
 
 
 

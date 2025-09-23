@@ -26,10 +26,10 @@ function ItemList({ items }) {
         {filteredItems.map(item => (
             <Item 
                 key={item.id}
+                imagen={item.imagen}
                 nombre={item.nombre}
                 descripcion={item.descripcion}
                 precio={item.precio}
-                imagen={item.imagen}
             />
         ))}
       </div>

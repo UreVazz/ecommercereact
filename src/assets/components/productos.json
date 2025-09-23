@@ -5,7 +5,7 @@
     "categoria": "Mediano",
     "descripcion": "Pequeño zorro tallado en madera con colores vivos y detalles geométricos.",
     "precio": 450,
-    "imagen": "https://ejemplo.com/images/zorro1.jpg"
+    "imagen": "/imagesproducts/ale.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "categoria": "Mediano",
     "descripcion": "Colibrí artesanal en tamaño pequeño, pintado a mano con patrones florales.",
     "precio": 380,
-    "imagen": "https://ejemplo.com/images/colibri1.jpg"
+    "imagen": "/imagesproducts/ale1.jpg"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "categoria": "Pequeño",
     "descripcion": "Tortuga pequeña con acabados en tonos azules y verdes que representan el agua.",
     "precio": 420,
-    "imagen": "https://ejemplo.com/images/tortuga1.jpg"
+    "imagen": "/imagesproducts/ale2.jpg"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "categoria": "Pequeño",
     "descripcion": "Dragón de tamaño mediano con alas extendidas y detalles en tonos rojos y naranjas.",
     "precio": 1200,
-    "imagen": "https://ejemplo.com/images/dragon1.jpg"
+    "imagen": "/imagesproducts/ale3.jpg"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "categoria": "Pequeño",
     "descripcion": "Armadillo mediano, pintado con patrones geométricos inspirados en la naturaleza.",
     "precio": 950,
-    "imagen": "https://ejemplo.com/images/armadillo1.jpg"
+    "imagen": "/imagesproducts/ale4.jpg"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "categoria": "Grande",
     "descripcion": "Búho artesanal mediano con ojos grandes y colores que evocan la noche.",
     "precio": 1100,
-    "imagen": "https://ejemplo.com/images/buho1.jpg"
+    "imagen": "/imagesproducts/ale5.jpg"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "categoria": "Grande",
     "descripcion": "Jaguar de gran tamaño con patrones tribales y colores intensos que representan fuerza.",
     "precio": 2500,
-    "imagen": "https://ejemplo.com/images/jaguar1.jpg"
+    "imagen": "/imagesproducts/ale6.jpg"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "categoria": "Grande",
     "descripcion": "Serpiente grande con dos cabezas, símbolo de dualidad y equilibrio en el arte zapoteco.",
     "precio": 2800,
-    "imagen": "https://ejemplo.com/images/serpiente1.jpg"
+    "imagen": "/imagesproducts/ale7.jpg"
   }
 
 ]
