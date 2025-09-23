@@ -1,19 +1,26 @@
 import { useState } from 'react'
 import './App.css'
-import Body from './assets/componets/Body';
-import Header from './assets/componets/Header';
-import Footer from './assets/componets/Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './assets/components/Layout'
+import Home from './assets/components/Home'
+import Nosotros from './assets/components/Nosotros' 
+import Productos from './assets/components/Productos'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Header />
-    <Body />
-    <Footer />
-
-    </>
+    <BrowserRouter>
+    <Routes> 
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home/>}/>
+        <Route path="nosotros" element={<Nosotros/>}/>
+        <Route path="productos" element={<Productos/>}/>
+      </Route>
+    </Routes>
+   </BrowserRouter>
+  </> 
   )
 }
 

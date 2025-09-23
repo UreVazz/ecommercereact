@@ -25,14 +25,34 @@ ul{
   color: #1f1f1f;
 }
 
-.navbar, .header, .itemsmenu{
+.header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-.header{
   padding: 16px 0px;
+}
+
+.navbar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+a{
+  color: #1f1f1f;
+}
+a:hover{
+color: #fc373b;
+}
+
+.navbar li{
+  list-style-type: none;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 8px;
+  margin: 0 8px;
 }
 
 .itemsmenu li {
