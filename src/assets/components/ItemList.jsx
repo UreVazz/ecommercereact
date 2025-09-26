@@ -1,40 +1,70 @@
-import { useState } from 'react';
-import Item from './Item';
+import { useState } from "react";
+import Item from "./Item";
 
 const categories = {
-    Peq: "Pequeño",
-    Med: "Mediano",
-    Gra: "Grande"
+  Peq: "Pequeño",
+  Med: "Mediano",
+  Gra: "Grande",
 };
 
 function ItemList({ items }) {
-    const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-    const filteredItems = selectedCategory ?
-     items.filter(item => item.categoria === selectedCategory) : items;
-
+  const filteredItems = selectedCategory?
+   items.filter((item) => item.categoria === selectedCategory)
+    : items;
 
   return (
-    <div className='containerCategoriesFilter'>
-        <div>
-            <button onClick={()=> setSelectedCategory("")}> Todos</button>
-            <button onClick={()=> setSelectedCategory(categories.Peq)}> Pequeño</button>
-            <button onClick={()=> setSelectedCategory(categories.Med)}> Mediano</button>
-            <button onClick={()=> setSelectedCategory(categories.Gra)}> Grande</button>
-        </div>
-        <div className='listadoDeCards'>
-        {filteredItems.map(item => (
-            <Item 
-                key={item.id}
-                imagen={item.imagen}
-                nombre={item.nombre}
-                descripcion={item.descripcion}
-                precio={item.precio}
-            />
+    <div className="containerCategoriesFilter">
+      <div>
+        <button onClick={() => setSelectedCategory("")}>Todos</button>
+        <button onClick={() => setSelectedCategory(categories.Peq)}>Pequeño</button>
+        <button onClick={() => setSelectedCategory(categories.Med)}>Mediano</button>
+        <button onClick={() => setSelectedCategory(categories.Gra)}>Grande</button>
+      </div>
+
+      <div className="listadoDeCards">
+        {filteredItems.map((item) => (
+          <Item
+            key={item.id}
+            id={item.id}         
+            imagen={item.imagen}   
+            nombre={item.nombre}
+            descripcion={item.descripcion}
+            precio={item.precio}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-export default ItemList
+export default ItemList;
+
+    // const filteredItems = selectedCategory ?
+    //  items.filter(item => item.categoria === selectedCategory) : items;
+
+
+//   return (
+//     <div className='containerCategoriesFilter'>
+//         <div>
+//             <button onClick={()=> setSelectedCategory("")}> Todos</button>
+//             <button onClick={()=> setSelectedCategory(categories.Peq)}> Pequeño</button>
+//             <button onClick={()=> setSelectedCategory(categories.Med)}> Mediano</button>
+//             <button onClick={()=> setSelectedCategory(categories.Gra)}> Grande</button>
+//         </div>
+//         <div className='listadoDeCards'>
+//         {filteredItems.map(item => (
+//             <Item 
+//                 key={item.id}
+//                 imagen={item.imagen}
+//                 nombre={item.nombre}
+//                 descripcion={item.descripcion}
+//                 precio={item.precio}
+//             />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+

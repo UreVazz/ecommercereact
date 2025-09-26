@@ -1,28 +1,44 @@
 import { useEffect, useState } from "react";
 import "./style.css";
-import productos from "./productos.json";
 import ItemList from "./ItemList";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 function ItemListContainer() {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const fetchProductos = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productos)
-      }, 1000)
-    })
-    
-    fetchProductos.then((data) => {
-      setItems(data)
-    })
-  }, [])
+    const db = getFirestore();
+    const refItems = collection(db, "productos"); // 👈 asegúrate que sea el nombre correcto de tu colección
+
+    getDocs(refItems).then((snapshot) => {
+      const lista = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setItems(lista);
+    });
+  }, []);
 
   return (
     <div className="mainContainerDeListadoProductos">
-      <ItemList items={items} />
+      <ItemList items={items} /> {/* 👈 le paso los productos */}
     </div>
-  )
+  );
 }
 
-export default ItemListContainer
+export default ItemListContainer;
+
+
+
+
+
+  //     setTimeout(() => {
+  //       resolve(productos)
+  //     }, 2000)
+  //   })
+    
+  //   fetchProductos.then((data) => {
+  //     setItems(data)
+  //   })
+  // }, [])
+

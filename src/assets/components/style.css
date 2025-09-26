@@ -46,6 +46,40 @@
     width: 100%;
 }
 
+.error404{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0% 20%;
+}
+
+
+/* HOME */
+
+.headerhome{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 72px 0px 72px 0px;
+}
+
+.headerhome h1{
+  font-size: 2.5em;
+  margin: 0;
+  padding-bottom: 0px;
+}
+.headerhome p{
+  padding-right: 60%;
+  padding-top: 0px;
+}
+
+
+
+
 
 
 
