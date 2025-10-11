@@ -5,7 +5,7 @@
 }
 
 a{
-  color:#1f1f1f
+  color: inherit;
 }
 
 ul{
@@ -15,7 +15,7 @@ ul{
 
 #root {
   margin: 0 auto;
-  padding: 0rem 2rem;
+  padding: 0rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,10 @@ ul{
   padding: 16px 0px;
 }
 
+.bodym{
+  padding: 0rem 2rem;
+}
+
 .navbar ul{
   display: flex;
   flex-direction: row;
@@ -40,11 +44,9 @@ ul{
   align-items: center;
 }
 
-a{
-  color: #1f1f1f;
-}
+
 a:hover{
-color: #fc373b;
+color: #5849ff;
 }
 
 .navbar li{
@@ -84,3 +86,4 @@ color: #fc373b;
   height: auto;
   margin-top: 20px;
 }
+

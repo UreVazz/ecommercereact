@@ -8,7 +8,7 @@ function ItemListContainer() {
 
   useEffect(() => {
     const db = getFirestore();
-    const refItems = collection(db, "productos"); // 👈 asegúrate que sea el nombre correcto de tu colección
+    const refItems = collection(db, "productos");
 
     getDocs(refItems).then((snapshot) => {
       const lista = snapshot.docs.map((doc) => ({
@@ -21,7 +21,7 @@ function ItemListContainer() {
 
   return (
     <div className="mainContainerDeListadoProductos">
-      <ItemList items={items} /> {/* 👈 le paso los productos */}
+      <ItemList items={items} /> 
     </div>
   );
 }
