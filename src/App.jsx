@@ -10,6 +10,10 @@ import { getFirestore, doc, getDoc } from 'firebase/firestore/lite'
 import ThemeContext, {tema} from './assets/components/context';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { CartProvider } from './assets/components/Cartcontext';
+import Carrito from './assets/components/Carrito';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -30,17 +34,21 @@ function App() {
   return ( 
     <>
     <ThemeContext.Provider value={{temaActual, handleTema}}>
+      <CartProvider>
       <BrowserRouter>
     <Routes> 
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home/>}/>
         <Route path="productos" element={<Productos/>}/>
         <Route path="nosotros" element={<Nosotros/>}/>
-        <Route path="detalle/:id" element={<Detalle />} />
+        <Route path="detalle/:id" element={<Detalle/>}/>
+        <Route path="carrito" element={<Carrito/>}/>
         <Route path="*" element={<Error/>}/>
       </Route>
     </Routes>
    </BrowserRouter>
+   <ToastContainer />
+   </CartProvider>
     </ThemeContext.Provider>
 
 

@@ -1,50 +1,48 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getFirestore, doc, getDoc } from 'firebase/firestore/lite'
-import CreateItemBD from "./CreateItemBD";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { CartContext } from "./Cartcontext";
 
 function Detalle() {
-    const { id } = useParams();
-    const [data, setData] = useState({});  
-    // seteo la base de datos
-    const db = getFirestore();
+  const { id } = useParams();
+  const [data, setData] = useState(null);
+  const db = getFirestore();
+  const { agregarAlCarrito } = useContext(CartContext);
 
-     useEffect(() => {
-    const itemRef = doc(db, "productos", id); // 🔹 Usar el id dinámico
-    getDoc(itemRef).then((snapshot) => {
-      if (snapshot.exists()) {
-        setData(snapshot.data());
-      } else {
-        console.log("No existe el producto");
+  useEffect(() => {
+    const fetchProducto = async () => {
+      try {
+        const itemRef = doc(db, "productos", id);
+        const snapshot = await getDoc(itemRef);
+        if (snapshot.exists()) {
+          setData(snapshot.data());
+        } else {
+          setData(null);
+        }
+      } catch (error) {
+        console.error(error);
       }
-    });
-  }, [id]);
+    };
+    fetchProducto();
+  }, [id, db]);
 
-// useEffect(() => {
-//     // hago la referencia de búsqueda
-//     const itemRef = doc(db, 'producto', 'IfguQuG7s31wElLoPrqE')
-
-//     //traigo el elemento
-//     getDoc(itemRef).then(snapshot => {
-//         console.log(snapshot);
-//         console.log(snapshot.data());
-//         setData(snapshot.data())
-//     })
-// }, [])
+  if (!data) return <p>Producto no encontrado</p>;
 
   return (
-<div className="detalleDeProducto">
-    <div>
-        <img src={data.img} alt={data.nombre} width={300} />
-     </div>
-     <div>
+    <div className="detalleDeProducto" style={{ display: "flex", gap: "2rem" }}>
+      <div className="detalle-imagen">
+        <img src={data.imagen} alt={data.nombre} width={300} />
+      </div>
+      <div className="detalle-info">
         <h2>{data.nombre}</h2>
         <p>{data.descripcion}</p>
-        <h3>{data.precio}</h3>
+        <h3>${data.precio}</h3>
+        <button onClick={() => agregarAlCarrito({ ...data, id })}>
+          Agregar al carrito
+        </button>
+      </div>
     </div>
-</div>
-  )
+  );
 }
 
-
-export default Detalle
+export default Detalle;

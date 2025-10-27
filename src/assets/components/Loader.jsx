@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
+import "./style.css";
 
 const Loader = () => {
   return (
@@ -162,4 +161,3 @@ const StyledWrapper = styled.div`
   }`;
 
 export default Loader;
-
